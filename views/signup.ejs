@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>URL Shortener</h1>
-    <form action='/signup' method="POST" class="my-5 form-inline">
+    <form action='/signup' class="my-5 form-inline">
         <label for="Email" class="sr-only">Email</label>
         <input required placeholder="Enter Email" type="email" name="email" id="email" class="form-control col mr-2">
         <label for="Name" class="sr-only">Name</label>
@@ -20,5 +20,34 @@
         <button type="submit" class="btn btn-success">Sign Up</button> 
     </form>
     </div>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          // get values
+          const formData = new FormData(form);
+          const bodyData = Object.fromEntries(formData);
+          try {
+            const res = await fetch("http://localhost:5000/signup", { 
+              method: 'POST', 
+              body: JSON.stringify(bodyData),
+              headers: {'Content-Type': 'application/json'}
+            });
+            console.log("SIGNUP API CALL DONE");
+            // const data = await res.json();
+            // console.log(data);
+            // let homeUrl = 'http://localhost:5000/?accessToken=';
+            // homeUrl = homeUrl + data.accessToken;
+            // const res2 = await fetch(homeUrl , {
+            //     method: 'GET',
+            //     headers: {'Content-Type': 'application/json'}
+            // });
+            // console.log("HOME POST API ALSO DONE");
+          }
+          catch (err) {
+            console.log(err);
+          }
+        });
+      </script>
 </body>
 </html>
