@@ -56,7 +56,7 @@ npm run dev
 - Open your web browser and go to localhost:PORT/login or localhost:PORT/signup to access the login or signup page.
 
 - Explore the website and enjoy its features!
-For a more detailed demonstration of the project's working and features, please watch the following video: [Video Link](https://www.youtube.com/)
+For a more detailed demonstration of the project's working and features, please watch the following video: [Video Link](https://youtu.be/CLuCeEMMy1U)
 
 ## Internal Working
 ### Dependencies Used
@@ -96,7 +96,7 @@ For a more detailed demonstration of the project's working and features, please 
 - GET '/:shortUrl': This API redirects the user to the full URL associated with the provided short URL.
 Please note that these are brief explanations of the dependencies used and the REST APIs implemented in the project. The actual implementation may have additional functionality and error handling.
 
-A video demonstrating all these can be found [here](https://www.youtube.com)
+A video demonstrating all these can be found [here](https://youtu.be/CLuCeEMMy1U)
 
 ## My Takeaways
 During the development of this project, several valuable lessons and takeaways were gained. Here are some key insights:
