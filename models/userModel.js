@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const UserSchema = new mongoose.Schema({
   userId: {
     type: String,
@@ -17,6 +16,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     default: 0
+  },
+  searchUrls: {
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'shortUrl'
+    }],
+    default: []
   }
 })
 
