@@ -18,5 +18,20 @@
         <button type="submit" class="btn btn-success">Log In</button>
     </form>
     </div>
+    <div>
+        <button class="btn btn-info" id="goToSignUp">Create an Account here. Sign Up Now</button>
+      </div>
+      <script>
+        try{
+              const signUpButton = document.getElementById('goToSignUp');
+              signUpButton.addEventListener('click', async () => {
+                location.assign('/signup');
+              });
+          }
+          catch(error){
+              console.log("ERROR IN GOING FROM LOGIN TO SIGNUP");
+              console.log(error);
+          }
+      </script>
 </body>
 </html>

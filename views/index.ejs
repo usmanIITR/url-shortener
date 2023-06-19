@@ -9,12 +9,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>URL Shortener</h1>
+        <div>
+            <h1>URL Shortener</h1>
+            <button class="btn btn-danger" id="logoutButton">Logout</button>
+        </div>
     <form action='/shortUrls' method="POST" class="my-5 form-inline">
         <label for="fullUrl" class="sr-only">URL</label>
         <input required placeholder="Paste Long Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
         <button type="submit" class="btn btn-success">Short It</button> 
     </form>
+    <div class="container">
+        <h3>Search your links</h3>
+        <input placeholder="Search links here" type="text" name="search" id="search" class="form-control col mr-2">
+    </div>
     <table class="table table-stripped table-responsive">
         <thead>
             <tr>
@@ -34,5 +41,20 @@
         </tbody>
     </table>
     </div>
+    <script>
+        try{
+            const logoutButton = document.getElementById('logoutButton');
+            logoutButton.addEventListener('click', async () => {
+                const res = await fetch('/logout', {method: 'GET'});
+                if(res.ok){
+                    location.assign('/login');
+                }
+            });
+        }
+        catch(error){
+            console.log("ERROR IN LOGOUT");
+            console.log(error);
+        }
+    </script>
 </body>
 </html>
