@@ -130,7 +130,8 @@ app.post("/search" , async (req,res) =>{
                 "$match": {
                   "$or": [
                     { "short": { "$regex": regex } },
-                    { "full": { "$regex": regex } }
+                    { "full": { "$regex": regex } },
+                    { "note": { "$regex": regex } }
                   ]
                 }
               }
@@ -160,7 +161,7 @@ app.post("/shortUrls" , async (req,res) =>{
             if(user == null) {
                 return res.status(404).send("User Not Found");
             }
-            await ShortUrl.create({userId : user.userId, full : req.body.fullUrl});
+            await ShortUrl.create({userId : user.userId, full : req.body.fullUrl , note: req.body.note});
             res.redirect('/');
         }
         else{

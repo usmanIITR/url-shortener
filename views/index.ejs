@@ -17,6 +17,7 @@
     <form action='/shortUrls' method="POST" class="my-5 form-inline">
         <label for="fullUrl" class="sr-only">URL</label>
         <input required placeholder="Paste Long Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+        <input placeholder="Add a Note (OPTIONAL)" type="text" name="note" id="note" class="form-control col mr-2">
         <button type="submit" class="btn btn-success">Short It</button> 
     </form>
     <br>
@@ -32,6 +33,7 @@
             <thead>
                 <tr>
                     <th>Full Url</th> 
+                    <th>Note</th> 
                     <th>Short Url</th>
                     <th>Clicks</th>
                 </tr>
@@ -40,6 +42,7 @@
                 <% searchUrls.forEach(searchUrl => { %>
                     <tr>
                       <td><a href="<%= searchUrl.full %>"><%= searchUrl.full %></a></td>
+                      <td><a href="<%= searchUrl.note %>"><%= searchUrl.note %></a></td>
                       <td><a href="<%= searchUrl.short %>">https://www.make-short-urls.in/<%= searchUrl.short %></a></td>
                       <td><%= searchUrl.clicks %></td>
                     </tr>
@@ -55,6 +58,7 @@
             <thead>
                 <tr>
                     <th>Full Url</th> 
+                    <th>Note</th> 
                     <th>Short Url</th>
                     <th>Clicks</th>
                 </tr>
@@ -63,6 +67,7 @@
                 <% shortUrls.forEach(shortUrl => { %>
                     <tr>
                       <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                      <td><a href="<%= shortUrl.note %>"><%= shortUrl.note %></a></td>
                       <td><a href="<%= shortUrl.short %>">https://www.make-short-urls.in/<%= shortUrl.short %></a></td>
                       <td><%= shortUrl.clicks %></td>
                     </tr>
